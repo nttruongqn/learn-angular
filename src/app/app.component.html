@@ -1,10 +1,15 @@
 <div class="pages__home">
   <app-header></app-header>
   <div class="pages__home-content">
-    <input type="text" [ngModel]="user.name" (ngModelChange)="user.name = $event">
-    <button (click)="handler($event)" >Click me</button>
-    <p>{{user.name}}</p>
-    <router-outlet></router-outlet>
+   <app-hello *ngIf="user.age >= 30;" [name]= "user.name"/>
+
+    <div *ngIf="user.age < 30" class="" #under30>
+      nonono
+    </div>
+
+    <button (click)="user.age = user.age-1">-</button>
+    age: {{user.age}}
+    <button  (click)="user.age = user.age+1">+</button>
 
     <!-- <div *ngIf="isAlert" class="alert alert-primary" role="alert">
       {{alertMsg}}
