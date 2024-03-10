@@ -1,0 +1,57 @@
+<!-- <app-root>
+
+</app-root> -->
+<div class="container p-4">
+
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Tạo mới
+  </button>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of products; let i = index;">
+        <th scope="row">{{ i+1}}</th>
+        <td>{{item.title}}</td>
+        <td>{{item.price}}</td>
+        <td></td>
+        <td></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="productForm" (ngSubmit)="submit()" action="">
+          <div class="form-group">
+            <label for="">Name</label>
+            <input type="text" placeholder="name" formControlName="name">
+          </div>
+          <div class="form-group">
+            <label for="">Price</label>
+            <input type="text" placeholder="price" formControlName="price">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
