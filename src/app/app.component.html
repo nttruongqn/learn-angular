@@ -1,13 +1,39 @@
 <div class="pages__home">
   <app-header></app-header>
   <div class="pages__home-content">
-    <input type="text" [ngModel]="user.name" (ngModelChange)="user.name = $event">
-    <button (click)="handler($event)" >Click me</button>
-    <p>{{user.name}}</p>
-    <router-outlet></router-outlet>
 
-    <!-- <div *ngIf="isAlert" class="alert alert-primary" role="alert">
-      {{alertMsg}}
-    </div> -->
+    <!--
+      index: 'so thu tu item hien tau';
+      count: 'do dai cua array';
+      first: true neu item la item dau;
+      last: true neu item la item cuoi;
+      even: chan;
+      odd: le;
+     -->
+    <ul>
+      <ng-container *ngIf="users.length > 0;else noUsers" >
+        <li *ngFor="let user of users;
+        index as idx;
+        count as total;
+        first as isFirst;
+        last as isLast;
+        even as isEven;
+        odd as isOdd;" [class.color-red]="isLast">
+          {{user.name}} -
+          {{user.id}} - {{user.email}}
+          <span *ngIf="">
+            at {{idx}} of {{total}}
+          </span>
+          <span *ngIf="isFirst"> first </span>
+          <span *ngIf="isLast"> last</span>
+          <span *ngIf="isEven"> even</span>
+          <span *ngIf="isOdd"> odd</span>
+          <span></span>
+        </li>
+      </ng-container>
+      <ng-template #noUsers>
+        ko co gi
+      </ng-template>
+    </ul>
   </div>
 </div>
