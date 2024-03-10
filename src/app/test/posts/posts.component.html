@@ -1,0 +1,4 @@
+<app-post-detail *ngFor="let post of posts" [post]="post" (select)="onSelected($event)" (delete) = "onDelete($event)"> </app-post-detail>
+<div class="">
+  current author: {{currentPost}}
+</div>
