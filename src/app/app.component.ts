@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular13';
+  title = 'angular99';
+  isAlert = false;
+  alertMsg = "abc";
+  user = {
+    name: "Nguyen Van A",
+    age: 30
+  }
+
+  handler = (event:any) => {
+    console.log('clicked', event);
+  }
 }
