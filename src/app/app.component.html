@@ -1,6 +1,12 @@
 <div class="pages__home">
   <app-header></app-header>
   <div class="pages__home-content">
+    <button (click)="isDanger = !isDanger">isDanger</button>
+    <button (click)="isWarning = !isWarning">isWarning</button>
+
+    <div class="box" [class.bg-orange]="isDanger" [class.bg-red]="isWarning" [style]="{background: 'green'}" [style.color]="isDanger ? 'red': 'black'">a </div>
+    <!-- <div class="box" [class]="{'bg-red': isDanger, 'bg-warning': isWarning}"></div>
+
+    <div [ngClass]="classContent"></div> -->
 
   </div>
-</div>
