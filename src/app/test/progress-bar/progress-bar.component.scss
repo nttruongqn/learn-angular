@@ -1,0 +1,12 @@
+.pages {
+  &__progress-bar{
+    &-parent{
+      height: 20px;
+      width: 400px;
+    }
+    &-child{
+      height: 20px;
+    }
+  }
+
+}

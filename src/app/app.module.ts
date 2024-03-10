@@ -10,6 +10,7 @@ import { HeaderComponent } from './layouts/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HelloComponent } from './test/hello/hello.component';
+import { ProgressBarComponent } from './test/progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HelloComponent } from './test/hello/hello.component';
     ProductsComponent,
     HeaderComponent,
     HelloComponent,
+    ProgressBarComponent,
   ],
   imports: [
     BrowserModule,
